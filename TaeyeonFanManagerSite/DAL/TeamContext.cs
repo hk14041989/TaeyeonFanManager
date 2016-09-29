@@ -19,7 +19,6 @@ namespace TaeyeonFanManagerSite.DAL
         public DbSet<Concept> Concepts { get; set; }
         public DbSet<FanSign> FanSigns { get; set; }
         public DbSet<Person> People { get; set; }
-        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

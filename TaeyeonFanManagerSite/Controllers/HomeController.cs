@@ -45,16 +45,12 @@ namespace TaeyeonFanManagerSite.Controllers
             return View();
         }
 
-        public ActionResult getLoginData(User obj)
-        {
-            var user = db.Users.Where(x => x.UserName.Equals(obj.UserName) && x.Password.Equals(obj.Password)).FirstOrDefault();
-            return new JsonResult { Data = user, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-        }
+        //public ActionResult getLoginData(User obj)
+        //{
+        //    var user = db.Users.Where(x => x.UserName.Equals(obj.UserName) && x.Password.Equals(obj.Password)).FirstOrDefault();
+        //    return new JsonResult { Data = user, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        //}
 
-        public ActionResult UserLogin()
-        {
-            return View();
-        }
         protected override void Dispose(bool disposing)
         {
             db.Dispose();

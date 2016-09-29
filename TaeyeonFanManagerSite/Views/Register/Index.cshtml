@@ -1,0 +1,59 @@
+﻿<style>
+    input {
+        max-width: 300px;
+    }
+
+    .error {
+        color: red;
+    }
+</style>
+
+<div class="panel panel-info" style="margin-left:250px;margin-right:250px;">
+    <div class="panel-heading">
+        Registration Form using Angular
+    </div>
+    <div ng-controller="RegistationController" class="panel-body">
+        <form novalidate name="f1" ng-submit="SaveData(User)" class="form-horizontal">
+            <div class="form-group">
+                <label class="text text-info col-md-offset-2">Full Name : </label>
+                <input type="text" ng-model="User.FullName" class="form-control col-md-offset-2" name="uFullName" ng-class="submitted?'ng-dirty':''" required autofocus />
+                <span class="error col-md-offset-2" ng-show="(f1.uFullName.$dirty || submitted) && f1.uFullName.$error.required">Fullname required!</span>
+            </div>
+
+            <div class="form-group">
+                <label class="text text-info col-md-offset-2">Email ID : </label>
+                <input type="email" ng-model="User.EmailID" class="form-control col-md-offset-2" name="uEmailID" ng-class="submitted?'ng-dirty':''" />
+                <span class="error col-md-offset-2" ng-show="(f1.uEmailID.$dirty || submitted) && f1.uEmailID.$error.required">Email required</span>
+                <span class="error col-md-offset-2" ng-show="(f1.uEmailID.$dirty || submitted) && f1.uEmailID.$error.email">Email ID not valid!</span>
+            </div>
+            <div class="form-group">
+                <label class="text text-info col-md-offset-2">UserName : </label>
+                <input type="text" ng-model="User.UserName" class="form-control col-md-offset-2" name="uUserName" ng-class="submitted?'ng-dirty':''" required />
+                <span class="error col-md-offset-2" ng-show="(f1.uUserName.$dirty || submitted) && f1.uUserName.$error.required">UserName required!</span>
+            </div>
+            <div class="form-group">
+                <label class="text text-info col-md-offset-2">Password : </label>
+                <input type="password" ng-model="User.Password" class="form-control col-md-offset-2" name="uPassword" ng-class="submitted?'ng-dirty':''" required />
+                <span class="error col-md-offset-2" ng-show="(f1.uPassword.$dirty || submitted) && f1.uPassword.$error.required">Password required!</span>
+            </div>
+            <div class="form-group">
+                <label class="text text-info col-md-offset-2"> Gender : </label>
+                <input type="radio" class="col-md-offset-2" ng-model="User.Gender" name="uGender" value="Male" required /> Male
+                <input type="radio" class="col-md-offset-2" ng-model="User.Gender" name="uGender" value="Female" required /> Female
+                <span class="error" ng-show="(f1.uGender.$dirty || submitted) && f1.uGender.$error.required">Gender required!</span>
+
+            </div>
+            <div class="form-group">
+                <label></label>
+                <input type="submit" class="btn btn-success col-md-offset-2" value="{{submitText}}" />
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer">
+        AngularJS application
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/Scripts/RegistrationController.js"></script>
+}
