@@ -1,0 +1,30 @@
+﻿@model IEnumerable<TaeyeonFanManagerSite.ViewModels.JoinedDateDateGroup>
+
+@{
+    ViewBag.Title = "Fan Body Statistics";
+}
+
+<h2>Fan Body Statistics</h2>
+
+<table>
+    <tr>
+        <th>
+            Joined Date
+        </th>
+        <th>
+            Fans
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JoinedDateDate)
+            </td>
+            <td>
+                @item.FanCount
+            </td>
+        </tr>
+    }
+</table>

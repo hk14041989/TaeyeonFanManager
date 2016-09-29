@@ -1,0 +1,60 @@
+﻿@model IEnumerable<TaeyeonFanManagerSite.Models.Offline>
+
+@{
+    ViewBag.Title = "Offlines";
+}
+
+<h2>Offlines</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Select Concept: @Html.DropDownList("SelectedConcept", "All")
+        <input type="submit" value="Filter" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OfflineID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TicketPrices)
+        </th>
+        <th>
+            Concept
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OfflineID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TicketPrices)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Concept.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OfflineID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OfflineID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OfflineID })
+        </td>
+    </tr>
+}
+
+</table>

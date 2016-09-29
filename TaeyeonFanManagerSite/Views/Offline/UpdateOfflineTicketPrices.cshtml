@@ -1,0 +1,29 @@
+﻿@model TaeyeonFanManagerSite.Models.Offline
+
+@{
+    ViewBag.Title = "UpdateOfflineTicketPrices";
+}
+
+<h2>Update Offline Ticket Prices</h2>
+
+@if (ViewBag.RowsAffected == null)
+{
+    using (Html.BeginForm())
+    {
+        <p>
+            Enter a number to multiply every offline's ticket prices by: @Html.TextBox("multiplier")
+        </p>
+        <p>
+            <input type="submit" value="Update" />
+        </p>
+    }
+}
+@if (ViewBag.RowsAffected != null)
+{
+    <p>
+        Number of rows updated: @ViewBag.RowsAffected
+    </p>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

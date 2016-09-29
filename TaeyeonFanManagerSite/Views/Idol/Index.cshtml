@@ -1,0 +1,123 @@
+﻿@model TaeyeonFanManagerSite.ViewModels.IdolIndexData
+
+@{
+    ViewBag.Title = "Idols";
+}
+
+<h2>Idols</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Meet Date</th>
+        <th>FanSign</th>
+        <th>Offlines</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Idols)
+    {
+        string selectedRow = "";
+        if (item.ID == ViewBag.IdolID)
+        {
+            selectedRow = "success";
+        }
+        <tr class="@selectedRow">
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstMidName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeetDate)
+            </td>
+            <td>
+                @if (item.FanSign != null)
+                {
+                    @item.FanSign.Location
+                }
+            </td>
+            <td>
+                @{
+                    foreach (var offline in item.Offlines)
+                    {
+                        @offline.OfflineID @:  @offline.Title <br />
+                    }
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Select", "Index", new { id = item.ID }) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@if (Model.Offlines != null)
+{
+    <h3>Offlines Taught by Selected Idol</h3>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>Number</th>
+            <th>Title</th>
+            <th>Concept</th>
+        </tr>
+
+        @foreach (var item in Model.Offlines)
+        {
+            string selectedRow = "";
+            if (item.OfflineID == ViewBag.OfflineID)
+            {
+                selectedRow = "success";
+            }
+            <tr class="@selectedRow">
+                <td>
+                    @Html.ActionLink("Select", "Index", new { OfflineID = item.OfflineID })
+                </td>
+                <td>
+                    @item.OfflineID
+                </td>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Concept.Name
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+@if (Model.JoinedDates != null)
+{
+    <h3>
+        Fans Joined in Selected Offline
+    </h3>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Rank</th>
+        </tr>
+        @foreach (var item in Model.JoinedDates)
+        {
+            <tr>
+                <td>
+                    @item.Fan.FullName
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rank)
+                </td>
+            </tr>
+        }
+    </table>
+}
