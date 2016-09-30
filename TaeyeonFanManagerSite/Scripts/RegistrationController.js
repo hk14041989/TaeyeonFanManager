@@ -52,7 +52,7 @@
     fac.SaveFormData = function (data) {
         var defer = $q.defer();
         $http({
-            url: '/Register',
+            url: '/Register/Register',
             method: 'POST',
             data: JSON.stringify(data),
             headers: { 'content-type': 'application/json' }

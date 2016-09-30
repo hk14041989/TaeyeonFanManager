@@ -135,6 +135,7 @@
     <Compile Include="Controllers\FanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IdolController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OfflineController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="DAL\TeamConfiguration.cs" />
@@ -197,6 +198,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>User.edmx</DependentUpon>
     </Compile>
+    <Compile Include="User1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\AssignedOfflineData.cs" />
     <Compile Include="ViewModels\IdolIndexData.cs" />
     <Compile Include="ViewModels\JoinedDateDateGroup.cs" />
@@ -244,6 +250,7 @@
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\LoginController.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\MyApp.js" />
     <Content Include="Scripts\RegistrationController.js" />
@@ -297,6 +304,7 @@
     <Content Include="Views\Offline\UpdateOfflineTicketPrices.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Views\Register\Index.cshtml" />
     <EntityDeploy Include="User.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>User.Designer.cs</LastGenOutput>
@@ -304,7 +312,7 @@
     <Content Include="User.edmx.diagram">
       <DependentUpon>User.edmx</DependentUpon>
     </Content>
-    <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201609280251354_InitialCreate.resx">

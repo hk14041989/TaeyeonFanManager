@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ae792d5b813e4730bc1f0ef5fec00e61" Name="Diagram1">
-        <EntityTypeShape EntityType="TaeyeonFanManagerSite5Model.User" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="25f2554a38af40a7a2f86785756c828d" Name="Diagram1">
+        <EntityTypeShape EntityType="TaeyeonFanManagerSiteDBModel.User" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

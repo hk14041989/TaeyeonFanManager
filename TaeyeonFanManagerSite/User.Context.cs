@@ -13,10 +13,10 @@ namespace TaeyeonFanManagerSite
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TaeyeonFanManagerSite5Entities : DbContext
+    public partial class TaeyeonFanManagerSiteDBEntities : DbContext
     {
-        public TaeyeonFanManagerSite5Entities()
-            : base("name=TaeyeonFanManagerSite5Entities")
+        public TaeyeonFanManagerSiteDBEntities()
+            : base("name=TaeyeonFanManagerSiteDBEntities")
         {
         }
     

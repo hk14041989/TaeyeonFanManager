@@ -22,10 +22,10 @@ namespace TaeyeonFanManagerSite.Controllers
             string message = "";
             if (ModelState.IsValid)
             {
-                using (TaeyeonFanManagerSite5Entities dc = new TaeyeonFanManagerSite5Entities())
+                using (TaeyeonFanManagerSiteDBEntities dc = new TaeyeonFanManagerSiteDBEntities())
                 {
                     //check username available
-                    var user = dc.Users.Where(a => a.UserName.Equals(u.UserName)).FirstOrDefault();
+                    var user = dc.Users.Where(a => a.Username.Equals(u.Username)).FirstOrDefault();
                     if (user == null)
                     {
                         dc.Users.Add(u);
@@ -34,7 +34,7 @@ namespace TaeyeonFanManagerSite.Controllers
                     }
                     else
                     {
-                        message = "UserName not available!";
+                        message = "Username not available!";
                     }
                 }
             }
