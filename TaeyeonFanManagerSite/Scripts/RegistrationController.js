@@ -1,5 +1,5 @@
 ﻿angular.module('MyApp')
-.controller('RegistationController', function ($scope, RegistrationService) {
+.controller('RegisterController', function ($scope, RegistrationService) {
     //Default Variable
     $scope.submitText = "Save";
     $scope.submitted = false;

@@ -39,3 +39,4 @@ D:\Users\KienPham\documents\visual studio 2013\Projects\TaeyeonFanManagerSite\Ta
 D:\Users\KienPham\documents\visual studio 2013\Projects\TaeyeonFanManagerSite\TaeyeonFanManagerSite\obj\Debug\TaeyeonFanManagerSite.csproj.GenerateResource.Cache
 D:\Users\KienPham\documents\visual studio 2013\Projects\TaeyeonFanManagerSite\TaeyeonFanManagerSite\obj\Debug\TaeyeonFanManagerSite.dll
 D:\Users\KienPham\documents\visual studio 2013\Projects\TaeyeonFanManagerSite\TaeyeonFanManagerSite\obj\Debug\TaeyeonFanManagerSite.pdb
+D:\Users\KienPham\Documents\Visual Studio 2013\Projects\TaeyeonFanManagerSite\TaeyeonFanManagerSite\obj\Debug\TaeyeonFanManagerSite.csprojResolveAssemblyReference.cache
